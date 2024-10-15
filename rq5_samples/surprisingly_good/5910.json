@@ -1,0 +1,32 @@
+{
+  "origin": "codeshovel",
+  "repositoryName": "mongo-java-driver",
+  "repositoryPath": "/home/shaiful/research/codeshovel/codeshovel-projects/mongo-java-driver/.git",
+  "startCommitName": "HEAD",
+  "sourceFileName": "Filters.java",
+  "functionName": "geoWithinBox",
+  "functionId": "geoWithinBox___fieldName-String(modifiers-final)__lowerLeftX-double(modifiers-final)__lowerLeftY-double(modifiers-final)__upperRightX-double(modifiers-final)__upperRightY-double(modifiers-final)",
+  "sourceFilePath": "driver-core/src/main/com/mongodb/client/model/Filters.java",
+  "functionStartLine": 635,
+  "functionEndLine": 643,
+  "numCommitsSeen": 27,
+  "timeTaken": 799,
+  "changeHistory": [
+    "0831e9bc5a09d0e15fce268ec9210060ba27f4c7"
+  ],
+  "changeHistoryShort": {
+    "0831e9bc5a09d0e15fce268ec9210060ba27f4c7": "Yintroduced"
+  },
+  "changeHistoryDetails": {
+    "0831e9bc5a09d0e15fce268ec9210060ba27f4c7": {
+      "type": "Yintroduced",
+      "commitMessage": "Added GeoJson object model with enough functionality for use as query filters\nAdded GeoJson object model codecs (with only encoding support initially)\nAdded geoWithin and geoIntersects factory methods to Filters class\nAdded near and nearSphere factory methods to Filters class\nAdded geoWithinBox, geoWithinPolygon, geoWithinCenter, and getWithinCenterSphere factory methodsto Filters class\nAdded GeoJsonCodecProvider to default codec registry in com.mongodb.MongoClient and com.mongodb.async.client.MongoClientImpl\n\n JAVA-1664\n",
+      "commitDate": "22/04/15 1:58 PM",
+      "commitName": "0831e9bc5a09d0e15fce268ec9210060ba27f4c7",
+      "commitAuthor": "Jeff Yemin",
+      "diff": "@@ -0,0 +1,9 @@\n+    public static Bson geoWithinBox(final String fieldName, final double lowerLeftX, final double lowerLeftY, final double upperRightX,\n+                                    final double upperRightY) {\n+        BsonDocument box \u003d new BsonDocument(\"$box\",\n+                                            new BsonArray(asList(new BsonArray(asList(new BsonDouble(lowerLeftX),\n+                                                                                      new BsonDouble(lowerLeftY))),\n+                                                                 new BsonArray(asList(new BsonDouble(upperRightX),\n+                                                                                      new BsonDouble(upperRightY))))));\n+        return new OperatorFilter\u003cBsonDocument\u003e(\"$geoWithin\", fieldName, box);\n+    }\n\\ No newline at end of file\n",
+      "actualSource": "    public static Bson geoWithinBox(final String fieldName, final double lowerLeftX, final double lowerLeftY, final double upperRightX,\n                                    final double upperRightY) {\n        BsonDocument box \u003d new BsonDocument(\"$box\",\n                                            new BsonArray(asList(new BsonArray(asList(new BsonDouble(lowerLeftX),\n                                                                                      new BsonDouble(lowerLeftY))),\n                                                                 new BsonArray(asList(new BsonDouble(upperRightX),\n                                                                                      new BsonDouble(upperRightY))))));\n        return new OperatorFilter\u003cBsonDocument\u003e(\"$geoWithin\", fieldName, box);\n    }",
+      "path": "driver-core/src/main/com/mongodb/client/model/Filters.java"
+    }
+  }
+}
