@@ -1,4 +1,4 @@
-# good_bad_ugly_public_data
+# good_bad_monstrous_public_data
 
 ### Description of the dataset.
 
